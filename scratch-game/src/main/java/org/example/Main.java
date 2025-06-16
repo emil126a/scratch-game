@@ -1,10 +1,10 @@
 package org.example;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.config.GameConfig;
-import org.example.config.GameEvaluator;
-import org.example.config.GameResult;
-import org.example.config.MatrixGenerator;
+import org.example.dto.GameConfig;
+import org.example.service.GameEvaluator;
+import org.example.dto.GameResult;
+import org.example.service.MatrixGenerator;
 
 import java.io.File;
 

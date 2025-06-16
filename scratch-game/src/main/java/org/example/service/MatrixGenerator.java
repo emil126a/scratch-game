@@ -1,4 +1,7 @@
-package org.example.config;
+package org.example.service;
+
+import org.example.dto.CellProbability;
+import org.example.dto.GameConfig;
 
 import java.util.Map;
 import java.util.Random;

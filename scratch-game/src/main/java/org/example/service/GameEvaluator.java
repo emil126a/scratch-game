@@ -1,4 +1,9 @@
-package org.example.config;
+package org.example.service;
+
+import org.example.dto.GameConfig;
+import org.example.dto.GameResult;
+import org.example.dto.Symbol;
+import org.example.dto.WinCombination;
 
 import java.util.ArrayList;
 import java.util.HashMap;
