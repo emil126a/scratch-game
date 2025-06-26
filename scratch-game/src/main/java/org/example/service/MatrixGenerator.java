@@ -19,7 +19,6 @@ public class MatrixGenerator {
         String[][] matrix = new String[config.getRows()][config.getColumns()];
         CellProbability defaultProb = config.getProbabilities().getStandardSymbols().get(0);
 
-        // Fill matrix with standard symbols
         for (int row = 0; row < config.getRows(); row++) {
             for (int col = 0; col < config.getColumns(); col++) {
                 CellProbability prob = getProbabilityForCell(row, col, defaultProb);
@@ -27,7 +26,6 @@ public class MatrixGenerator {
             }
         }
 
-        // Randomly place one bonus symbol
         int bonusRow = random.nextInt(config.getRows());
         int bonusCol = random.nextInt(config.getColumns());
         Map<String, Integer> bonusProbs = config.getProbabilities().getBonusSymbols().getSymbols();

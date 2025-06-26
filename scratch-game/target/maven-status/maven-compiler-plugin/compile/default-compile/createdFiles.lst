@@ -1,0 +1,10 @@
+org/example/dto/GameConfig.class
+org/example/Main.class
+org/example/dto/Symbol.class
+org/example/dto/GameResult.class
+org/example/service/GameEvaluator.class
+org/example/dto/BonusSymbols.class
+org/example/dto/Probabilities.class
+org/example/dto/CellProbability.class
+org/example/dto/WinCombination.class
+org/example/service/MatrixGenerator.class

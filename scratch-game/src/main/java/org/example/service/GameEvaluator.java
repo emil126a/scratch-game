@@ -24,7 +24,6 @@ public class GameEvaluator {
         result.setMatrix(matrix);
         result.setAppliedWinningCombinations(new HashMap<>());
 
-        // Count standard symbols
         Map<String, Integer> symbolCounts = new HashMap<>();
         String bonusSymbol = null;
         for (String[] row : matrix) {
@@ -37,7 +36,6 @@ public class GameEvaluator {
             }
         }
 
-        // Check win combinations
         Map<String, List<String>> appliedCombinations = new HashMap<>();
         Map<String, Double> symbolRewards = new HashMap<>();
         for (Map.Entry<String, WinCombination> entry : config.getWinCombinations().entrySet()) {
@@ -62,7 +60,7 @@ public class GameEvaluator {
                         String[] coords = pos.split(":");
                         int row = Integer.parseInt(coords[0]);
                         int col = Integer.parseInt(coords[1]);
-                        String symbol = matrix[row][col]; // Fixed: Changed 'lamp' to 'symbol'
+                        String symbol = matrix[row][col];
                         if (config.getSymbols().get(symbol).getType().equals("bonus")) {
                             continue;
                         }
@@ -82,10 +80,8 @@ public class GameEvaluator {
             }
         }
 
-        // Calculate total reward
         double totalReward = symbolRewards.values().stream().mapToDouble(Double::doubleValue).sum();
 
-        // Apply bonus symbol if reward exists
         if (totalReward > 0 && bonusSymbol != null) {
             Symbol bonus = config.getSymbols().get(bonusSymbol);
             if (bonus.getImpact().equals("multiply_reward")) {
